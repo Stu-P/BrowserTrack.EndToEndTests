@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSettings
+  id="d59c489b-e27c-412c-b784-9a546b0db932"
+  name="TestSettingsUAT"
+  enableDefaultDataCollectors="false"
+  xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Description><!--_locID_text="Description1"-->These are default test settings for a local test run.</Description>
+  <Deployment>
+    <DeploymentItem filename="C:\RequiredLibraries\" />
+    <DeploymentItem filename="SpecflowAcceptanceTests\Environment\UAT\Environment.config" />
+    <DeploymentItem filename="SpecflowAcceptanceTests\bin\Debug\fr-FR\" outputDirectory="fr-FR" />
+  </Deployment>
+</TestSettings>

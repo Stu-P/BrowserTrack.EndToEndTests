@@ -1,0 +1,16 @@
+﻿<figure ng-if="step.user_data.screenshot">
+    <figcaption class="text-muted">{{step.title}} </figcaption>
+    <result-badge report-item="step"></result-badge>
+    <br>
+    <div>
+        <div class="screenshot-container">
+            <img class="screenshot" alt="{{step.title}}" title="{{step.title}}" ng-src="{{step.user_data.screenshot}}"></img>
+        </div>
+        <table ng-table class="step-table">
+            <th class="step-table" ng-repeat="item in step.table.columns">{{item}}</th>
+            <tr class="step-table" ng-repeat="row in step.table.rows">
+                <td class="step-table" ng-repeat="item in row">{{item}}</td>
+            </tr>
+        </table>
+    </div>
+</figure>

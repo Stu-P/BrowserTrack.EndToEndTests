@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestSettings name="UATTestSettings" id="7599e4ba-1468-435e-94cf-b0955c8b2efc" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Description>These are default test settings for a local test run.</Description>
+  <Deployment enabled="false">
+    <DeploymentItem filename="C:\RequiredLibraries\" />
+    <DeploymentItem filename="SpecflowAcceptanceTests\bin\Debug\ReportTemplate\" outputDirectory="ReportTemplate" />
+    <DeploymentItem filename="SpecflowAcceptanceTests\bin\Debug\fr-FR\" outputDirectory="fr-FR" />
+    <DeploymentItem filename="SpecflowAcceptanceTests\Environment\UAT\Environment.config" />
+  </Deployment>
+  <Execution>
+    <TestTypeSpecific>
+      <UnitTestRunConfig testTypeId="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b">
+        <AssemblyResolution>
+          <TestDirectory useLoadContext="true" />
+        </AssemblyResolution>
+      </UnitTestRunConfig>
+    </TestTypeSpecific>
+    <AgentRule name="LocalMachineDefaultRole">
+    </AgentRule>
+  </Execution>
+  <Properties />
+</TestSettings>

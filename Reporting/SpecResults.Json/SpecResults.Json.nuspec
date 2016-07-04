@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<package>
+	<metadata>
+		<id>$id$</id>
+		<version>$version$</version>
+		<title>$title$</title>
+		<authors>$author$</authors>
+		<owners>$author$</owners>
+		<licenseUrl>https://raw.githubusercontent.com/TimSchlechter/SpecResults/master/LICENSE</licenseUrl>
+		<projectUrl>https://github.com/specflowreporting/SpecResults</projectUrl>
+		<iconUrl>https://dl.dropboxusercontent.com/u/17880436/SpecFlowReporting.png</iconUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>$description$</description>
+		<releaseNotes></releaseNotes>
+		<copyright>Copyright 2015</copyright>
+		<tags>specflow bdd test reporting json</tags>
+		<dependencies>
+			<dependency id="SpecResults" version="$version$" />
+		</dependencies>
+	</metadata>
+</package>

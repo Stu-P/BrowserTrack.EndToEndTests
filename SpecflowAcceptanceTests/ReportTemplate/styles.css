@@ -1,0 +1,54 @@
+﻿.step-details {
+	float: left;
+	margin-right: 20px;
+	/*max-width: 275px;*/
+}
+
+figure { text-align: center; }
+
+figcaption {
+	font-size: 14px;
+	font-style: italic;
+	margin: 5px 0 5px 0;
+    max-width: 330px;
+}
+
+.screenshot { width: 100%; }
+
+.screenshot-container {
+	border: 4px solid white;
+	width: 400px;
+	max-width: 100%;
+	outline: 1px solid #ddd;
+	overflow: auto;
+    float:left;
+}
+
+
+table.step-table {
+    margin-left: 10px;
+    float: right;
+}
+
+td.step-table, th.step-table {
+    color: #999;
+    font-size: 10px;
+    text-align: left;
+	padding: 4px;
+	vertical-align: top;
+	max-width: 150px;
+}
+
+tr.step-table {
+    border-color: #999;
+    border-width: 1px 0;
+    border-style: solid;
+}
+
+tr.step-table:first-child {
+  border-top: none;
+}
+
+tr.step-table:last-child {
+  border-bottom: none;
+}
