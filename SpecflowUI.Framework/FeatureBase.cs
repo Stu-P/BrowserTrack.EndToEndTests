@@ -17,6 +17,7 @@ using SpecResults;
 using SpecResults.Model;
 using RelevantCodes.ExtentReports;
 using SpecResults.ExtentReporter;
+using SpecResults.WebApp;
 
 namespace SpecflowUI.Framework
 {
@@ -91,100 +92,103 @@ namespace SpecflowUI.Framework
         public static void BeforeTestRun()
         {
             ExtentReports extent = new ExtentReports(@"C:\htmlspecflowreport.html", true);
+            
 
-            //if (Convert.ToBoolean(ConfigurationManager.AppSettings["HTMLReport"]))
-            //{
-            //    var webApp = new WebAppReporter();
-            //    webApp.Settings.Title = "Specflow UI tests";
-            //    webApp.Settings.StepDetailsTemplateFile = GetAbsolutePath(@"ReportTemplate\step-details.tpl.html");
-            //    webApp.Settings.CssFile = GetAbsolutePath(@"ReportTemplate\styles.css");
-            //    webApp.Settings.DashboardTextFile = GetAbsolutePath(@"ReportTemplate\dashboard-text.md");
-
-            var extentReporter = new ExtentReporter();
-
-              
-            var screenshotFolder = GetAbsolutePath("screenshots");
-            //    //var appFolder = GetAbsolutePath("app");
-            //    var screenshotFolder = GetReportPath("screenshots");
-            //    var appFolder = GetReportPath("app");
-
-            //    if (Directory.Exists(screenshotFolder))
-            //    {
-            //        Directory.Delete(screenshotFolder, true);
-            //    }
-
-            ExtentTest feature = new ExtentTest("", "");
-            ExtentTest scenario = new ExtentTest("", "");
-
-            Reporters.StartedFeature += (sender, args) =>
+            if (Convert.ToBoolean(ConfigurationManager.AppSettings["HTMLReport"]))
             {
-                feature = extent.StartTest(args.Feature.Title);
-            };
+                //var webApp = new WebAppReporter();
+                //webApp.Settings.Title = "Specflow UI tests";
+                //webApp.Settings.StepDetailsTemplateFile = GetAbsolutePath(@"ReportTemplate\step-details.tpl.html");
+                //webApp.Settings.CssFile = GetAbsolutePath(@"ReportTemplate\styles.css");
+                //webApp.Settings.DashboardTextFile = GetAbsolutePath(@"ReportTemplate\dashboard-text.md");
 
-            Reporters.FinishedFeature += (sender, args) =>
-            {
-                extent.EndTest(feature);
-            };
+                var extentReporter = new ExtentReporter();
 
-            Reporters.StartedScenario += (sender, args) =>
-            {
-                scenario = new ExtentTest(args.Scenario.Title, "");
-                feature.AppendChild(scenario);
-            };
+                Reporters.Add(extentReporter);
+
+                var screenshotFolder = GetAbsolutePath("screenshots");
+                //    //var appFolder = GetAbsolutePath("app");
+                //    var screenshotFolder = GetReportPath("screenshots");
+                //    var appFolder = GetReportPath("app");
+
+                //    if (Directory.Exists(screenshotFolder))
+                //    {
+                //        Directory.Delete(screenshotFolder, true);
+                //    }
+
+                ExtentTest feature = new ExtentTest("", "");
+                ExtentTest scenario = new ExtentTest("", "");
+
+                Reporters.StartedFeature += (sender, args) =>
+                {
+                    feature = extent.StartTest(args.Feature.Title);
+                };
+
+                Reporters.FinishedFeature += (sender, args) =>
+                {
+                    extent.EndTest(feature);
+                };
+
+                Reporters.StartedScenario += (sender, args) =>
+                {
+                    scenario = new ExtentTest(args.Scenario.Title, "");
+                    feature.AppendChild(scenario);
+                };
 
 
-            Reporters.FinishedScenario += (sender, args) =>
-            {
-                extent.EndTest(scenario);
-            };
+                Reporters.FinishedScenario += (sender, args) =>
+                {
+                    extent.EndTest(scenario);
+                };
 
-            Reporters.FinishedStep += (sender, args) =>
-            {
+                Reporters.FinishedStep += (sender, args) =>
+                {
 
                 //  var path = Path.Combine("screenshots", Guid.NewGuid().ToString() + ".png");
 
                 var filename = Guid.NewGuid().ToString() + ".png";
-                var absolutePath = Path.Combine(@"C:\testscreenshots", filename);
-                CurrentDriver.TakeScreenshot(absolutePath);
+                    var absolutePath = Path.Combine(@"C:\testscreenshots", filename);
+                    CurrentDriver.TakeScreenshot(absolutePath);
 
-                LogStatus logStatus = LogStatus.Unknown;
+                    LogStatus logStatus = LogStatus.Unknown;
 
-                switch (args.Step.Result) {
-                    case TestResult.OK:
-                        logStatus = LogStatus.Pass; break;
-                    case TestResult.Error:
-                        logStatus = LogStatus.Fail; break;
-                    case TestResult.NotRun:
-                        logStatus = LogStatus.Skip; break;
-                    case TestResult.Pending:
-                        logStatus = LogStatus.Warning; break;
-                    case TestResult.Unknown:
-                        logStatus = LogStatus.Unknown; break;
-                }
-
-
-                string stepType = args.ScenarioBlock.BlockType.ToString();
-
-                string table = "";
-
-                if (args.Step.Table != null)
-                    table = htmlTable( args.Step.Table);
-
-                string error = "";
-                if (args.Step.Exception != null)
-                    error += args.Step.Exception.ExceptionType + args.Step.Exception.Message ;
-
-                scenario.Log(logStatus, stepType + " " + args.Step.Title + scenario.AddScreenCapture(absolutePath) + table, error);
-
-            };
-
-            Reporters.FinishedReport += (sender, args) =>
-            {
-                extent.Flush();
-            };
-       }
+                    switch (args.Step.Result)
+                    {
+                        case TestResult.OK:
+                            logStatus = LogStatus.Pass; break;
+                        case TestResult.Error:
+                            logStatus = LogStatus.Fail; break;
+                        case TestResult.NotRun:
+                            logStatus = LogStatus.Skip; break;
+                        case TestResult.Pending:
+                            logStatus = LogStatus.Warning; break;
+                        case TestResult.Unknown:
+                            logStatus = LogStatus.Unknown; break;
+                    }
 
 
+                    string stepType = args.ScenarioBlock.BlockType.ToString();
+
+                    string table = "";
+
+                    if (args.Step.Table != null)
+                        table = htmlTable(args.Step.Table);
+
+                    string error = "";
+                    if (args.Step.Exception != null)
+                        error += args.Step.Exception.ExceptionType + args.Step.Exception.Message;
+
+                    scenario.Log(logStatus, stepType + " " + args.Step.Title + scenario.AddScreenCapture(absolutePath) + table, error);
+
+                };
+
+                Reporters.FinishedReport += (sender, args) =>
+                {
+                    extent.Flush();
+                };
+            }
+
+        }
         [AfterStep]
         private static void AfterStep() {
 

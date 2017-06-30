@@ -107,6 +107,14 @@
       <Project>{62647c88-fddc-425f-bc41-da86f59862b5}</Project>
       <Name>SpecResults.ExtentReporter</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Reporting\SpecResults.Json\SpecResults.Json.csproj">
+      <Project>{c830c923-5398-4f28-99c2-1592ee5f4f7b}</Project>
+      <Name>SpecResults.Json</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reporting\SpecResults.WebApp\SpecResults.WebApp.csproj">
+      <Project>{ea09e3a4-3b14-4ce5-a67e-f1ce9fe17bf8}</Project>
+      <Name>SpecResults.WebApp</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Reporting\SpecResults\SpecResults.csproj">
       <Project>{eaba391e-6b65-4e5c-8842-3d71a5f97b4f}</Project>
       <Name>SpecResults</Name>

@@ -18,11 +18,9 @@ using SpecResults;
 
 namespace SpecflowUI.Framework
 {
-    //TODO get rid of logic to keep browser alive between tests, too much overhead
 
     public class TestClassBase : ReportingStepDefinitions
     {
-        // private static Logger logger = LogManager.GetCurrentClassLogger();
 
         private const bool KeepBrowserAlive = false;
 

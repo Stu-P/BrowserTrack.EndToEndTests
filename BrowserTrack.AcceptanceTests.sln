@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecflowAcceptanceTests", "SpecflowAcceptanceTests\SpecflowAcceptanceTests.csproj", "{EC7E88A4-4357-4B97-A083-29AD8BCB45D0}"
 EndProject
@@ -20,9 +20,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{907687
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecflowUI.Framework", "SpecflowUI.Framework\SpecflowUI.Framework.csproj", "{56D21115-A781-4A89-9091-78F9EDEF155E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecResults", "Reporting\SpecResults\SpecResults.csproj", "{EABA391E-6B65-4E5C-8842-3D71A5F97B4F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reporting", "Reporting", "{AC1B7491-034A-4C41-A145-9F0D62CD4468}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecResults.ExtentReporter", "Reporting\SpecResults.ExtentReporter\SpecResults.ExtentReporter.csproj", "{62647C88-FDDC-425F-BC41-DA86F59862B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecResults", "Reporting\SpecResults\SpecResults.csproj", "{EABA391E-6B65-4E5C-8842-3D71A5F97B4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecResults.Json", "Reporting\SpecResults.Json\SpecResults.Json.csproj", "{C830C923-5398-4F28-99C2-1592EE5F4F7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecResults.WebApp", "Reporting\SpecResults.WebApp\SpecResults.WebApp.csproj", "{EA09E3A4-3B14-4CE5-A67E-F1CE9FE17BF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,14 +54,6 @@ Global
 		{56D21115-A781-4A89-9091-78F9EDEF155E}.NuGet|Any CPU.Build.0 = Release|Any CPU
 		{56D21115-A781-4A89-9091-78F9EDEF155E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56D21115-A781-4A89-9091-78F9EDEF155E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EABA391E-6B65-4E5C-8842-3D71A5F97B4F}.Build Nuget Packages|Any CPU.ActiveCfg = Build Nuget Packages|Any CPU
-		{EABA391E-6B65-4E5C-8842-3D71A5F97B4F}.Build Nuget Packages|Any CPU.Build.0 = Build Nuget Packages|Any CPU
-		{EABA391E-6B65-4E5C-8842-3D71A5F97B4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EABA391E-6B65-4E5C-8842-3D71A5F97B4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EABA391E-6B65-4E5C-8842-3D71A5F97B4F}.NuGet|Any CPU.ActiveCfg = NuGet|Any CPU
-		{EABA391E-6B65-4E5C-8842-3D71A5F97B4F}.NuGet|Any CPU.Build.0 = NuGet|Any CPU
-		{EABA391E-6B65-4E5C-8842-3D71A5F97B4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EABA391E-6B65-4E5C-8842-3D71A5F97B4F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{62647C88-FDDC-425F-BC41-DA86F59862B5}.Build Nuget Packages|Any CPU.ActiveCfg = Release|Any CPU
 		{62647C88-FDDC-425F-BC41-DA86F59862B5}.Build Nuget Packages|Any CPU.Build.0 = Release|Any CPU
 		{62647C88-FDDC-425F-BC41-DA86F59862B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -64,8 +62,38 @@ Global
 		{62647C88-FDDC-425F-BC41-DA86F59862B5}.NuGet|Any CPU.Build.0 = Release|Any CPU
 		{62647C88-FDDC-425F-BC41-DA86F59862B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62647C88-FDDC-425F-BC41-DA86F59862B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EABA391E-6B65-4E5C-8842-3D71A5F97B4F}.Build Nuget Packages|Any CPU.ActiveCfg = Build Nuget Packages|Any CPU
+		{EABA391E-6B65-4E5C-8842-3D71A5F97B4F}.Build Nuget Packages|Any CPU.Build.0 = Build Nuget Packages|Any CPU
+		{EABA391E-6B65-4E5C-8842-3D71A5F97B4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EABA391E-6B65-4E5C-8842-3D71A5F97B4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EABA391E-6B65-4E5C-8842-3D71A5F97B4F}.NuGet|Any CPU.ActiveCfg = NuGet|Any CPU
+		{EABA391E-6B65-4E5C-8842-3D71A5F97B4F}.NuGet|Any CPU.Build.0 = NuGet|Any CPU
+		{EABA391E-6B65-4E5C-8842-3D71A5F97B4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EABA391E-6B65-4E5C-8842-3D71A5F97B4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C830C923-5398-4F28-99C2-1592EE5F4F7B}.Build Nuget Packages|Any CPU.ActiveCfg = Build Nuget Packages|Any CPU
+		{C830C923-5398-4F28-99C2-1592EE5F4F7B}.Build Nuget Packages|Any CPU.Build.0 = Build Nuget Packages|Any CPU
+		{C830C923-5398-4F28-99C2-1592EE5F4F7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C830C923-5398-4F28-99C2-1592EE5F4F7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C830C923-5398-4F28-99C2-1592EE5F4F7B}.NuGet|Any CPU.ActiveCfg = NuGet|Any CPU
+		{C830C923-5398-4F28-99C2-1592EE5F4F7B}.NuGet|Any CPU.Build.0 = NuGet|Any CPU
+		{C830C923-5398-4F28-99C2-1592EE5F4F7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C830C923-5398-4F28-99C2-1592EE5F4F7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA09E3A4-3B14-4CE5-A67E-F1CE9FE17BF8}.Build Nuget Packages|Any CPU.ActiveCfg = Build Nuget Packages|Any CPU
+		{EA09E3A4-3B14-4CE5-A67E-F1CE9FE17BF8}.Build Nuget Packages|Any CPU.Build.0 = Build Nuget Packages|Any CPU
+		{EA09E3A4-3B14-4CE5-A67E-F1CE9FE17BF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA09E3A4-3B14-4CE5-A67E-F1CE9FE17BF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA09E3A4-3B14-4CE5-A67E-F1CE9FE17BF8}.NuGet|Any CPU.ActiveCfg = NuGet|Any CPU
+		{EA09E3A4-3B14-4CE5-A67E-F1CE9FE17BF8}.NuGet|Any CPU.Build.0 = NuGet|Any CPU
+		{EA09E3A4-3B14-4CE5-A67E-F1CE9FE17BF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA09E3A4-3B14-4CE5-A67E-F1CE9FE17BF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{62647C88-FDDC-425F-BC41-DA86F59862B5} = {AC1B7491-034A-4C41-A145-9F0D62CD4468}
+		{EABA391E-6B65-4E5C-8842-3D71A5F97B4F} = {AC1B7491-034A-4C41-A145-9F0D62CD4468}
+		{C830C923-5398-4F28-99C2-1592EE5F4F7B} = {AC1B7491-034A-4C41-A145-9F0D62CD4468}
+		{EA09E3A4-3B14-4CE5-A67E-F1CE9FE17BF8} = {AC1B7491-034A-4C41-A145-9F0D62CD4468}
 	EndGlobalSection
 EndGlobal

@@ -28,11 +28,3 @@ Given I have logged in and navigated to dashboard
 When I click on the chrome browser tile
 Then the browser switch is enabled
 
-
-Scenario: test
-Given so and so
-When I do something
-And I do something else 
-Then I get this result
-When I do something else
-Then I get this result

@@ -86,16 +86,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Features\Account.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Account.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\Contact.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Contact.feature</DependentUpon>
-    </Compile>
     <Compile Include="Features\Dashboard.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -135,14 +125,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Environment\UAT\Environment.config" />
-    <None Include="Features\Account.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Account.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\Contact.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Contact.feature.cs</LastGenOutput>
-    </None>
     <None Include="Features\VersionHistory.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>VersionHistory.feature.cs</LastGenOutput>
