@@ -8,8 +8,10 @@ Also includes an customised BDD html report based on [ExtentReports](https://git
 
 Examples:
 
-![alt text](https://github.com/Stu-P/BrowserTrack.EndToEndTests/blob/master/doc/bt01.PNG "image 1")  
-![alt text](https://github.com/Stu-P/BrowserTrack.EndToEndTests/blob/master/doc/bt02.PNG "image 2")  
+![alt text](https://github.com/Stu-P/BrowserTrack.EndToEndTests/blob/master/doc/bt01.PNG "image 1")
+
+![alt text](https://github.com/Stu-P/BrowserTrack.EndToEndTests/blob/master/doc/bt02.PNG "image 2")
+
 ![alt text](https://github.com/Stu-P/BrowserTrack.EndToEndTests/blob/master/doc/bt03.PNG "image 3")
 
 
