@@ -4,7 +4,7 @@ Includes a few tests for my BrowserTrack website for demonstration purposes.
 
 Supports page objects and multilingual websites.
 
-Also includes an customised BDD html report based on [ExtentReports](https://github.com/anshooarora/extentreports-csharp) and and [SpecResults](https://github.com/timschlechter/SpecResults) libraries.  
+Also includes a customised BDD html report based on [ExtentReports](https://github.com/anshooarora/extentreports-csharp) and [SpecResults](https://github.com/timschlechter/SpecResults) libraries.  
 
 Examples:
 
